@@ -35,7 +35,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.add),
         onPressed: () => print(
-            'Naivgate to add task screen'), // Identifies what the future action is goind to be
+            'Naivgate to add task screen'), // TODO: Identifies what the future action is going to be
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 80.0),
@@ -68,7 +68,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
               );
             }
             return _buildTask(
-                index); // These are the future containers for the tasks
+                index); // TODO: These are the future containers for the tasks
           },
         ),
       ),
