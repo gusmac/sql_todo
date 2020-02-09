@@ -15,20 +15,44 @@ class _TodoListScreenState extends State<TodoListScreen> {
         onPressed: () => print(
             'Naivgate to add task screen'), // Identifies what the future action is goind to be
       ),
-      body: ListView.builder(
-        itemCount: 1,
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text('My Tasks'),
-                SizedBox(height: 10.0),
-                Text('1 of 10'),
-              ],
-            );
-          }
-        },
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 80.0),
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            if (index == 0) {
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'My Tasks',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 40.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      '1 of 10',
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+              );
+            }
+            return Container(
+              margin: EdgeInsets.all(10.0),
+              height: 100.0,
+              width: double.infinity,
+              color: Colors.red,
+            ); // These are the future containers for the tasks
+          },
+        ),
       ),
     );
   }
