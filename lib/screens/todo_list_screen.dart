@@ -15,6 +15,21 @@ class _TodoListScreenState extends State<TodoListScreen> {
         onPressed: () => print(
             'Naivgate to add task screen'), // Identifies what the future action is goind to be
       ),
+      body: ListView.builder(
+        itemCount: 1,
+        itemBuilder: (BuildContext context, int index) {
+          if (index == 0) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text('My Tasks'),
+                SizedBox(height: 10.0),
+                Text('1 of 10'),
+              ],
+            );
+          }
+        },
+      ),
     );
   }
 }
