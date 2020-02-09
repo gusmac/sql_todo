@@ -11,6 +11,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
+        child: Icon(Icons.add),
+        onPressed: () => print(
+            'Naivgate to add task screen'), // Identifies what the future action is goind to be
       ),
     );
   }
