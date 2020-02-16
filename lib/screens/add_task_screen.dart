@@ -14,6 +14,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
   TextEditingController _dateController = TextEditingController();
 
   final DateFormat _dateFormatter = DateFormat('MMM dd, yyyy');
+  final List<String> _priorities = ['Low', 'Medium', 'High'];
 
   _handleDatePicker() async {
     final DateTime date = await showDatePicker(
@@ -96,17 +97,15 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   child: TextFormField(
                     style: TextStyle(fontSize: 18.0),
                     decoration: InputDecoration(
-                      labelText: 'Title',
+                      labelText: 'Priority',
                       labelStyle: TextStyle(fontSize: 18.0),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    validator: (input) => input.trim().isEmpty
-                        ? 'Please enter a task title'
-                        : null,
-                    onSaved: (input) => _title = input,
-                    initialValue: _title,
+                    validator: (input) =>
+                        input.trim().isEmpty ? 'Please a priority level' : null,
+                    onSaved: (input) => _priority = input,
                   ),
                 ),
               ],
