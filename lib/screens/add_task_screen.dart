@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class AddTaskScreen extends StatefulWidget {
   @override
@@ -12,6 +13,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
   DateTime _date = DateTime.now();
   TextEditingController _dateController = TextEditingController();
 
+  final DateFormat _dateFormatter = DateFormat('MMM dd, yyyy');
+
   _handleDatePicker() async {
     final DateTime date = await showDatePicker(
       context: context,
@@ -23,6 +26,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       setState(() {
         _date = date;
       });
+      _dateController.text = _dateFormatter.format(date);
     }
   }
 
