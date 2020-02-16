@@ -6,10 +6,36 @@ class AddTaskScreen extends StatefulWidget {
 }
 
 class _AddTaskScreenState extends State<AddTaskScreen> {
+  final _formkKey = GlobalKey<FormState>();
+  String _title = ' ';
+  String _priority;
+  DateTime _date = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Icon(
+              Icons.arrow_back_ios,
+              size: 30.0,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+          SizedBox(height: 20.0),
+          Text(
+            'Add Task',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
