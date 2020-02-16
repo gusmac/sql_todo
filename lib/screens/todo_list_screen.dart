@@ -40,7 +40,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
           MaterialPageRoute(
             builder: (_) => AddTaskScreen(),
           ),
-        ), // TODO: Identifies what the future action is going to be
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 80.0),
